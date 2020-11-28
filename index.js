@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://denny:test123@pinterestdata.owng2.mongodb.net/pinterest-clone?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect("mongodb+srv://yoshiDino:test123@cluster0.opk8e.mongodb.net/pinterest-clone", { useUnifiedTopology: true, useNewUrlParser: true })
 .then(() => console.log('Connected to DB'))
 .catch(err => console.log(err))
 
