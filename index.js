@@ -12,7 +12,7 @@ app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://yoshiDino:test123@cluster0.opk8e.mongodb.net/pinterest-clone", { useUnifiedTopology: true, useNewUrlParser: true })
-.then(() => app.listen(process.env.PORT || 4000, () => console.log("Listening on Port")))
+.then(() => console.log('Connected to DB'))
 .catch(err => console.log(err))
 
 app.use("/graphql", (req, res) => {
@@ -22,5 +22,6 @@ app.use("/graphql", (req, res) => {
     context: { req, res },
   })(req, res);
 });
-
+const port = process.env.PORT || 4000
+app.listen(port , () => console.log("Listening on Port", port))
 
