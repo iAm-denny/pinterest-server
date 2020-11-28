@@ -8,10 +8,10 @@ const schema = require("./schema/graphql");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://yoshiDino:test123@cluster0.opk8e.mongodb.net/pinterest-clone", { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect("Your Mongodb", { useUnifiedTopology: true, useNewUrlParser: true })
 .then(() => console.log('Connected to DB'))
 .catch(err => console.log(err))
 
